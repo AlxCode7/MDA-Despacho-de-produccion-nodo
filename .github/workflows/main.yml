@@ -1,0 +1,32 @@
+YAML
+name: Despacho CENACE MDA
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 23:30 UTC (17:30 hora de Jalisco)
+    - cron: '30 23 * * *'
+  workflow_dispatch: # boton vergas
+
+jobs:
+  ejecutar-reporte:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Extraer código del repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Instalar librerías
+      run: pip install -r requirements.txt
+
+    - name: Ejecutar script principal
+      env:
+        GREEN_API_ID: ${{ secrets.GREEN_API_ID }}
+        GREEN_API_TOKEN: ${{ secrets.GREEN_API_TOKEN }}
+        WHATSAPP_CHAT_ID: ${{ secrets.WHATSAPP_CHAT_ID }}
+        NODO_CENACE: ${{ secrets.NODO_CENACE }}
+      run: python main.py
