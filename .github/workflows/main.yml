@@ -5,6 +5,8 @@ on:
     - cron: '30 23 * * *'
     - cron: '30 5 * * *'
   workflow_dispatch: # boton vergas
+  repository_dispatch:
+    types: [forzar-reporte]
 
 jobs:
   ejecutar-reporte:
