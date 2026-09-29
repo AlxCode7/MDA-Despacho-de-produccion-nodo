@@ -1,8 +1,9 @@
 name: Despacho CENACE MDA
 on:
   schedule:
-    # Se ejecuta todos los días a las 23:30 UTC (17:30 hora de Jalisco)
+    # Se ejecuta todos los días a las 23:30 UTC y 05:30 (17:30 y 23:30 hora de Jalisco)
     - cron: '30 23 * * *'
+    - cron: '30 5 * * *'
   workflow_dispatch: # boton vergas
 
 jobs:
