@@ -1,6 +1,4 @@
-YAML
 name: Despacho CENACE MDA
-
 on:
   schedule:
     # Se ejecuta todos los días a las 23:30 UTC (17:30 hora de Jalisco)
