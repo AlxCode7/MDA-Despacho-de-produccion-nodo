@@ -1,10 +1,11 @@
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta , timezone
 import os
 
 # 1. Determinar la hora actual y la fecha objetivo
-ahora = datetime.now()
+zona_mexico = timezone(timedelta(hours=-6))
+ahora = datetime.now(zona_mexico)
 hora_publicacion = 17
 
 if ahora.hour >= hora_publicacion:
