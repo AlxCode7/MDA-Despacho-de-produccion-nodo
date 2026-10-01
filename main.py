@@ -20,7 +20,7 @@ fecha_str = fecha_objetivo.strftime("%Y/%m/%d")
 sistema = "SIN"
 proceso = "MDA"
 nodo = os.environ.get("NODO_CENACE")  # Clave oculta 
-horas_turbinado = 14
+horas_turbinado = 12
 
 print(f"Consultando precios del nodo {nodo} para el día {fecha_str}...")
 
